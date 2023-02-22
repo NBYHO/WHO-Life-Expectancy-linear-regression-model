@@ -49,7 +49,7 @@ QQ-plot of residuals suggests violation of normality assumption
 
 <img src="images/heatmap2.png">
 <img src="images/model1.png">
-<img src="images/model1.1.png">
+<img src="images/model1_1.png">
 
 <img src="images/QQplot1.png">
 
@@ -57,7 +57,7 @@ QQ-plot of residuals suggests violation of normality assumption
 Adj_R2: 0.804, RMSE: 1.411e-05 Residual error: 0.004
 
 <img src="images/model2.png">
-<img src="images/model2.1.png">
+<img src="images/model2_1.png">
 <img src="images/QQplot2.png">
 
 Our model significantly improve after log transformation to make variables distribution more normal. Our residual errors showed significant improvement. 
@@ -69,7 +69,7 @@ RSME is a perfect result showing that our model is not overfit or underfit and i
 QQ-plot seems more non-linear over each iteration of the model and Jarque-Bera score has reduced from 177 to 2.7 suggesting more normality. Our residual plots also shows more homocesdascity however our QQplot and Breush-Pagan Test indicated homoskadasticity violation.
 
 <img src="images/model3.png">
-<img src="images/model3/1.png">
+<img src="images/model3_1.png">
 
 <img src="images/QQplot3.png">
 <img src="images/Breuschpagan.png">
