@@ -38,7 +38,7 @@ Model Linear Regression models and evaluate each model using residual plots (che
 Adj-R2 : 0.819, RMSE : -0.922, Residual error: 15-16 years
 Very high residual errors suggesting our model is poor.
 
-<img src="images/baseline.png"  width="500" height="500">
+<img src="images/baseline.png">
 <img src="images/baeline1.png"  width="500" height="500">
 
 - Model 1: Significant features are selected and multicollinearity removed
