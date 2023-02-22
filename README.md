@@ -1,72 +1,111 @@
-# Phase 1 Project Template - Minimum Viable Product (MVP)
+# WHO Life Expectancy Multiple Linear Regression Analysis
 
-![blueprint](images/blueprint.png)
+<img src="images/life-expectancy.svg"  width="1000" height="400">
 
-This repository is like a blueprint, providing structure for your first End of Phase Project. We suggest you base your Phase 1 project off of this repository so you can focus less on formatting and organization, and more on the _analysis and communication skills_ that will support your progress through the course. This template is designed to make your project portfolio-ready in order to impress the future employers who will review it. 
+**Author:** Ngoc Ho
 
-## Repository Contents
+**Overview**
 
-Below is a list of the contents of this repository - instructions for using them are in the next section.
+Previously there were many studies on linear regression model to predict life expectancy however in most of them, affect of immunization and human development index was not taken into account. This project aims to build a regression model to predict life expectancy and investigate which factors affect life expectancy in the world with data of immunisation and human development included. A country can use this model to predict life expectancy and determine the predicting factor which is contributing to lower value of life expectancy. This will help in suggesting a country which area should be given importance in order to efficiently improve the life expectancy of its population.This model will be devrived from WHO life expectancy with data from every countries between 2000-2015 using statsmodel library in Python. From our model we found 9 significant factors contributing to life expectancy and the model is able to predict life expectancy to high level of accuracy.
 
-- `README.md`: The README for this repo branch explaining it's contents - you're reading it now
-- `TEMPLATE_README.md`: An example of a project README that provides a brief overview of your whole project
-- `dsc-phase1-project-template.ipynb`: A starter Jupyter Notebook with headings, code examples and guiding questions
-- `DS_Project_Presentation_Template.pdf`: A starter slide deck presenting your project - here is an [editable version](https://docs.google.com/presentation/d/1PaiH1bleXnhiPjTPsAXQSiAK0nkaRlseQIr_Yb-0mz0/copy)
-- `zippedData` folder: A folder for the data you reference with your code
-- `images` folder: A folder for the images you reference in your files 
-- `.gitignore`: A hidden file that tells git to not track certain files and folders
+**Business Problem**
 
-## Instructions For Using This Repository
+Life Expectancy is affected by various factors. WHO wishes to predict life expectancy and determine which factors has significant impact. From this project, WHO would be able to give a country its life expectancy and suggestions on which factor to focus on to improve their life expectancy.
 
-### Fork This Repository
+Questions to consider:
 
-**For a group project**, have only one team member do these steps:
+Does various predicting factors which has been chosen initially really affect the Life expectancy? What are the predicting variables actually affecting the life expectancy
+What is the impact of Immunization coverage on life Expectancy?
+Do densely populated countries tend to have lower life expectancy?
+What is the impact of schooling on the lifespan of humans?
 
-1. Fork this repository to your personal account
-   - In GitHub, go to this repository and click the "Fork" button in the upper right
-   
-2. Change the name of your fork of this repo to a _descriptive_ name of your choosing
-   - In GitHub, go to your fork of this repo -> "Settings" -> "Options" -> "Repository Name" -> "Rename"
-   - Make the name descriptive, since potential employers will read it. Ex: "Microsoft-Movie-Analysis" is better than "Project-1"
+**Data:**
+The dataset related to life expectancy, health factors for 193 countries has been collected from the same WHO data repository website and its corresponding economic data was collected from United Nation website. The data set has 22 columns and 2938 entries. Out of 22 colums, 20 predicting factors (independent variables). Our dependent variable is life expectancy in years. We will examine the relationship of these factors and life expectancy value using correlation analysis. These features will also be used to investigate their effect on life expectancy and be selected to be included in a multilinear regression model to predict life expectancy value.
 
-3. Use `git clone` to clone your fork of this repo to your local computer
+**Method:**
 
-4. **For a group project**, add team members as collaborators to your fork of this repo
-   - In GitHub, go to your fork of this repo -> "Settings" -> "Manage Access" -> "Invite Teams or People"
-   - Add your project team members as collaborators & send them the repo GitHub URL
+Check for data completeness and integrity
 
-### Work In Your Fork Of This Repository
+Perform EDA with statistical analysis to determine statistically significant features
 
-- Work in the repo clone that you created on your local machine
-- Start writing and coding in the Jupyter Notebook `dsc-phase1-project-template.ipynb`
-- Fill in the README template in `TEMPLATE_README.md`
-- Use `git add`, `git commit`, and `git push` often to update your repo in GitHub
-   - For a refresher on how to do this and why it's important, review Topic 2: Bash and Git
+Visualize statistically significant features
 
-### Use The Slide Template
+Engineer new features based on stastistical findings
 
-1. Go to [this link](https://docs.google.com/presentation/d/1PaiH1bleXnhiPjTPsAXQSiAK0nkaRlseQIr_Yb-0mz0/copy) to make an editable copy of the slide deck in your own Google Drive account
-2. Go to "Slide," select "Change Theme," and pick a theme you like so your presentation doesn't look like everyone else's
-3. **For a group project**, click the "Share" button and add your teammates as editors
+Model Linear Regression models and evaluate each model using residual plots (check homoscedasticity) and QQ plots (check normality) for final implementation
 
-### Tidy Up Your Project
+- Baseline model ( no changes to features)
+Adj-R2 : 0.819, RMSE : -0.922, Residual error: 15-16 years
+Very high residual errors suggesting our model is poor.
 
-- Change the file name of the Jupyter Notebook (`dsc-phase1-project-template.ipynb`) to something more descriptive
-- Save an appropriately-named PDF version of your slide deck to the repository
-- Rename the template readme you've been working in by running `git mv TEMPLATE_README.md README.md`
-- Delete unnecessary files from the repo using `git rm`
-   - The presentation PDF: `DS_Project_Presentation_Template.pdf`
-   - Any unused data files in the `zippedData` folder
-   - Any unused images in the `images` folder
-- Utilize the .gitignore file to ignore large unzipped data files in the `zippedData` folder
-   - Add `*.csv`,`*.tsv`, and `*.db` to the .gitignore file
+<img src="images/baseline.png"  width="500" height="500">
+<img src="images/baeline1.png"  width="500" height="500">
 
-### Submit Your Project
+- Model 1: Significant features are selected and multicollinearity removed
+Adj-R2 : 0.8, RMSE : -0.18, Redisual error : 17-18 years
+Slightly better RMSE but large redidual errors 
+QQ-plot of residuals suggests violation of normality assumption
 
-To submit your project, please follow the instructions in the "Project Submission & Review" page in the Milestones course.
 
-***
-### Notes
+<img src="images/heatmap2.png"  width="500" height="500">
+<img src="images/model1.png"  width="500" height="500">
+<img src="images/model1.1.png"  width="500" height="500">
 
-- The visualizations in the notebook use best practices for visualization that you should try to emulate. For example, they have clear axes, descriptive titles, and appropriate number formatting
-- The `dsc-phase1-project-template.ipynb` is intended to be the _final version_ of your project. The first notebook you create will not look like this. You are encouraged to start with a very disorderly notebook and clean it as you go
+<img src="images/QQplot1.png"  width="500" height="500">
+
+- Model 2: Normalisation of all variables using log transformation
+Adj_R2: 0.804, RMSE: 1.411e-05 Residual error: 0.004
+
+<img src="images/model2.png"  width="500" height="500">
+<img src="images/model2.1.png"  width="500" height="500">
+<img src="images/QQplot2.png"  width="500" height="500">
+
+Our model significantly improve after log transformation to make variables distribution more normal. Our residual errors showed significant improvement. 
+
+- Final model: Features scalling using standardisation
+Adj_R2: 0.804, RMSE: -0.0005, Residual: 0.037
+
+RSME is a perfect result showing that our model is not overfit or underfit and it yields accurate results.
+QQ-plot seems more non-linear over each iteration of the model and Jarque-Bera score has reduced from 177 to 2.7 suggesting more normality. Our residual plots also shows more homocesdascity however our QQplot and Breush-Pagan Test indicated homoskadasticity violation.
+
+<img src="images/model3.png"  width="500" height="500">
+<img src="images/model3/1.png"  width="500" height="500">
+
+<img src="images/QQplot3.png"  width="500" height="500">
+<img src="images/Breuschpagan.png"  width="500" height="500">
+
+Evaluate final model using cross validation
+
+<img src="images/crossvalidation1.png"  width="500" height="500">
+<img src="images/crossvalidation2.png"  width="500" height="500">
+
+<img src="images/RMSE.png"  width="500" height="500">
+
+
+**Evaluations:**
+The final model is able to produce almost zero residual both in the test and train group which means that within linear regression this model is very accurate. With a neglegible RMSE value close to 0, this model does not seem to be underfit or overfit. It has reasonable ability to generalise beyond the dataset. Jarque-Bera score improved from 389.55 in baseline model to 2.7 in final model, indicating improvement in normality. However our QQ-plot showed non-linear relationship and also our Breusch-Pagan Lagrange Multiplier test for heteroscedasticity recomfirmed heteroskedasticity. On the other hand, our residual plots of the model also shows ok homocesdascity in some variables. Our adjusted R2 value is only 0.804 which means that this model can explain 80.4% changes in the dependent variable i.e the features in this multilinear regression model can explain 80.4% of the variance in life expectancy. This adjusted R2 value indicates that linear regression is a very good fit for this dataset. I am confident that this model can accurate predict property value based on RSME results from cross validation and the model has strong inference abilty given the high adjusted R2 value. Therefore, this model maybe useful in accurately predicting life expectancy values and accurately explain how each features will affect life expectancy. However our linear regression model failed to satisfy the homoskedasticity assumption which questions the suitability of linear regression model.
+
+
+**Conclusions**
+From our final model summary, the estimated value of the coefficient indicates how strongly each factors affect life expectancy. We found 9 significant factors that affect life expectancy. They are Adult Mortality, BMI, Polio, Diphtheria, HIV_AIDS, GDP, thinness_1_19yrs, Schooling, status_Developing. HIV/AIDS has the highest estimated value of coefficient meaning this factor affects negatively affect life expectancy the most. We also found that Polio and Diphtheria immunisation does have positive effect on life expectancy. Population does not have an effect on life expectancy as it was eliminated in the stepwise selection process and it has p-value 0.972 and a significantly low correlation coefficient with life expectancy. We found that the number of years of schooling does have a postive correlation relationship and is a significant factor in life expectancy value. From this model, countries with high HIV/AIDS rate should focus on lowering it and increase their Polio, Diphtheria immunisation rate and invest in education. Countries should pay attention to all 9 factors affecting life expetancy.
+
+**Limitations:**
+
+This data set only includes data from 2000-2015 perhaps more updated dataset would provide a more accurate of current life expectancy. 
+
+Our linear regression model did not satisfy the homoceskedasticity assumptions perhaps a non-linear model is a more suitable model for this dataset. 
+
+## For More Information
+
+Please review my full analysis in [my Jupyter Notebook](https://github.com/NBYHO/dsc-project-2-house-sales/blob/main/King_County_Housing_Model.ipynb) or my [presentation](https://github.com/NBYHO/dsc-project-2-house-sales/blob/main/King%20County%20Presentation.pdf).
+
+For any additional questions, please contact **Ngoc Ho, yen.ho993@gmail.com**
+
+## Repository Structure
+    .
+    ├── data                                # data folder
+    ├── images                              # project image/graph files
+    ├── King_County_Housing_Model.ipynb     # project notebook
+    ├── Presentation.pdf                    # project presentation
+    └── README.md
+
