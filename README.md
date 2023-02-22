@@ -99,7 +99,7 @@ Our linear regression model did not satisfy the homoceskedasticity assumptions p
 
 ## For More Information
 
-Please review my full analysis in [my Jupyter Notebook](https://github.com/NBYHO/WHO-Life-Expectancy-linear-regression-model/blob/master/WHO-life-expectancy.ipynb) or my [presentation](https://github.com/NBYHO/WHO-Life-Expectancy-linear-regression-model/blob/main/WHO-life-expectancy-presentation.pdf).
+Please review my full analysis in [my Jupyter Notebook](https://github.com/NBYHO/WHO-Life-Expectancy-linear-regression-model/blob/master/WHO-life-expectancy.ipynb) or my [presentation](https://github.com/NBYHO/WHO-Life-Expectancy-linear-regression-model/blob/master/WHO%20Life%20Expectancy.pdf).
 
 For any additional questions, please contact **Ngoc Ho, yen.ho993@gmail.com**
 
