@@ -107,7 +107,7 @@ For any additional questions, please contact **Ngoc Ho, yen.ho993@gmail.com**
     .
     ├── data                                # data folder
     ├── images                              # project image/graph files
-    ├── King_County_Housing_Model.ipynb     # project notebook
+    ├── WHO_Life_Expectancy.ipynb           # project notebook
     ├── Presentation.pdf                    # project presentation
     └── README.md
 
