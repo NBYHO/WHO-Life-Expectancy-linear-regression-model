@@ -39,7 +39,7 @@ Adj-R2 : 0.819, RMSE : -0.922, Residual error: 15-16 years
 Very high residual errors suggesting our model is poor.
 
 <img src="images/baseline.png">
-<img src="images/baeline1.png"  width="500" height="500">
+<img src="images/baeline1.png">
 
 - Model 1: Significant features are selected and multicollinearity removed
 Adj-R2 : 0.8, RMSE : -0.18, Redisual error : 17-18 years
@@ -47,18 +47,18 @@ Slightly better RMSE but large redidual errors
 QQ-plot of residuals suggests violation of normality assumption
 
 
-<img src="images/heatmap2.png"  width="500" height="500">
-<img src="images/model1.png"  width="500" height="500">
-<img src="images/model1.1.png"  width="500" height="500">
+<img src="images/heatmap2.png">
+<img src="images/model1.png">
+<img src="images/model1.1.png">
 
-<img src="images/QQplot1.png"  width="500" height="500">
+<img src="images/QQplot1.png">
 
 - Model 2: Normalisation of all variables using log transformation
 Adj_R2: 0.804, RMSE: 1.411e-05 Residual error: 0.004
 
-<img src="images/model2.png"  width="500" height="500">
-<img src="images/model2.1.png"  width="500" height="500">
-<img src="images/QQplot2.png"  width="500" height="500">
+<img src="images/model2.png">
+<img src="images/model2.1.png">
+<img src="images/QQplot2.png">
 
 Our model significantly improve after log transformation to make variables distribution more normal. Our residual errors showed significant improvement. 
 
@@ -68,18 +68,18 @@ Adj_R2: 0.804, RMSE: -0.0005, Residual: 0.037
 RSME is a perfect result showing that our model is not overfit or underfit and it yields accurate results.
 QQ-plot seems more non-linear over each iteration of the model and Jarque-Bera score has reduced from 177 to 2.7 suggesting more normality. Our residual plots also shows more homocesdascity however our QQplot and Breush-Pagan Test indicated homoskadasticity violation.
 
-<img src="images/model3.png"  width="500" height="500">
-<img src="images/model3/1.png"  width="500" height="500">
+<img src="images/model3.png">
+<img src="images/model3/1.png">
 
-<img src="images/QQplot3.png"  width="500" height="500">
-<img src="images/Breuschpagan.png"  width="500" height="500">
+<img src="images/QQplot3.png">
+<img src="images/Breuschpagan.png">
 
 Evaluate final model using cross validation
 
-<img src="images/crossvalidation1.png"  width="500" height="500">
-<img src="images/crossvalidation2.png"  width="500" height="500">
+<img src="images/crossvalidation1.png">
+<img src="images/crossvalidation2.png">
 
-<img src="images/RMSE.png"  width="500" height="500">
+<img src="images/RMSE.png">
 
 
 **Evaluations:**
@@ -97,7 +97,7 @@ Our linear regression model did not satisfy the homoceskedasticity assumptions p
 
 ## For More Information
 
-Please review my full analysis in [my Jupyter Notebook](https://github.com/NBYHO/dsc-project-2-house-sales/blob/main/King_County_Housing_Model.ipynb) or my [presentation](https://github.com/NBYHO/dsc-project-2-house-sales/blob/main/King%20County%20Presentation.pdf).
+Please review my full analysis in [my Jupyter Notebook](https://github.com/NBYHO/WHO-Life-Expectancy-linear-regression-model/blob/master/WHO-life-expectancy.ipynb) or my [presentation](https://github.com/NBYHO/WHO-Life-Expectancy-linear-regression-model/blob/main/WHO-life-expectancy-presentation.pdf).
 
 For any additional questions, please contact **Ngoc Ho, yen.ho993@gmail.com**
 
